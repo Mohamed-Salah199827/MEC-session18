@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\AuthController;
+use App\Http\Controllers\api\OrderController;
 use App\Http\Controllers\api\ProductController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Http\Request;
@@ -27,6 +28,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/create-category', [CategoryController::class, "createCategory"]);
     Route::post('/create-product', [ProductController::class, "createProduct"]);
 });
+Route::post('/create-order',[OrderController::class, "createOrder"]);
 
 
 
