@@ -4,6 +4,7 @@ use App\Http\Controllers\api\AAuthController;
 use App\Http\Controllers\api\AuthController;
 use App\Http\Controllers\api\ProductController;
 use App\Http\Middleware\Admin;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,8 @@ Route::middleware('auth:sanctum')->group(function () {
 
 
     Route::post('/logout', [AuthController::class, "logout"]);
+    Route::post('/create-category', [CategoryController::class, "createCategory"]);
+    Route::post('/create-product', [ProductController::class, "createProduct"]);
 });
 
 
